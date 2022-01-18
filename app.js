@@ -18,7 +18,7 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, "public")));
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, "../node-backend/frontend-react/build")));
+app.use(express.static(path.join(__dirname, "node-backend/frontend-react/build")));
 
 app.use('/api', usersRouter);
 
