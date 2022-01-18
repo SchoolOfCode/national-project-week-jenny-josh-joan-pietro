@@ -21,7 +21,7 @@ function CreatePage() {
   }
   async function handleSubmit(e){
     e.preventDefault();
-    let response = await fetch('/api',{
+    let response = await fetch('/api/resources',{
       method:'POST',
       body:JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
