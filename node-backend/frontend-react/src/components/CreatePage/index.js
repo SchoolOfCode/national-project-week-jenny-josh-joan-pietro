@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Dropdown } from 'semantic-ui-react'
  
 
 function CreatePage() {
@@ -21,7 +22,7 @@ function CreatePage() {
   }
   async function handleSubmit(e){
     e.preventDefault();
-    let response = await fetch('/api',{
+    let response = await fetch('/api/resources',{
       method:'POST',
       body:JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
@@ -31,14 +32,22 @@ function CreatePage() {
     return response.json();
 
   }
+//array of topic
+  let topics = ["html","css","javascript",'react','database','testing','UI/UX','API','node']
 
+    
      return (
         <>
           <h1>Create your first topic</h1>
 
            <form method='POST' action='submit' onSubmit={handleSubmit}>
+
               <label for="topic">Topic:</label>
-              <input onChange={handleChange} type='text' id='topic' name='topic'/>
+              <select name="topic" id="cars" onChange={handleChange}>
+                <option value="html">html</option>
+                <option value="css">css</option> 
+              </select>
+             
               <br></br>
               <label for="keywords">Keywords:</label>
               <input onChange={handleChange} type='text' id='keywords' name='keywords'/>
