@@ -19,7 +19,16 @@ function CreatePage() {
     console.log(e.target.name);
     console.log(formData);
   }
-  function handleSubmit(){
+  async function handleSubmit(e){
+    e.preventDefault();
+    let response = await fetch('/api',{
+      method:'POST',
+      body:JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    // .then(res => console.log(res.json()));
+    console.log(JSON.stringify(formData))
+    return response.json();
 
   }
 
@@ -27,7 +36,7 @@ function CreatePage() {
         <>
           <h1>Create your first topic</h1>
 
-           <form method='POST' action='submit'>
+           <form method='POST' action='submit' onSubmit={handleSubmit}>
               <label for="topic">Topic:</label>
               <input onChange={handleChange} type='text' id='topic' name='topic'/>
               <br></br>
