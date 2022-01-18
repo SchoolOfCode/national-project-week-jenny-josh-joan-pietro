@@ -41,7 +41,7 @@ export async function deleteResourceById(id) {
 export async function createNewResource(newResource) {
   let username = newResource.username;
   let topic = newResource.topic;
-  let keywords = newResource.keywords;
+  let keywords = newResource.keywords + ' ' + newResource.topic;
   let description = newResource.description;
   let link = newResource.link;
   
