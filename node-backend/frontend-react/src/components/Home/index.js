@@ -1,17 +1,16 @@
-import React
- from "react";
+import React from "react";
  import {Link} from "react-router-dom";
+ import Sidebar from "../Sidebar";
+ import SearchBar from "../SearchBar";
 
 function Home() {
     return (
       <>
-        <main>
-          <h2>Welcome to the homepage!</h2>
-          <p>You can do this, I believe in you.</p>
-        </main>
-        <nav>
-          <Link to="/create">Create</Link>
-        </nav>
+      <Sidebar />
+
+        <h1>BOOTCAMPER HELPER</h1>
+        <p>Search all info about your favourite topic</p>
+        <SearchBar />     
       </>
     );
   }

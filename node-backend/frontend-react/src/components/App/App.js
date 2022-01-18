@@ -26,20 +26,14 @@ useEffect(() => {
 
   return (
     <div className="App">
-
       <Navbar /> 
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="create" element={<CreatePage />} />
       </Routes>
         
-        <Sidebar />
-
-        <h1>BOOTCAMPER HELPER</h1>
-        <p>Search all info about your favourite topic</p>
-        <SearchBar />
-        
-        
+     
     </div>
   );
 }
