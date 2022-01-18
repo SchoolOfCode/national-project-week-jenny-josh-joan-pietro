@@ -1,1 +1,4 @@
-Proxy listen on port 3001 not working - need to fix
+Get front end and back end communicating with each other
+Deploy to Heroku
+1 pair work on front end
+1 pair work on back end
