@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import './SearchBar.css'
 
 
-function SearchBar({submitSearch, handleChange, text}) {
+function SearchBar({submitSearch, handleChange, handleClick, text}) {
   return (
     <div className='search-button'>
       <form onSubmit={submitSearch}>
@@ -16,6 +16,7 @@ function SearchBar({submitSearch, handleChange, text}) {
           placeholder="Search by keywords"
         />
         <button className='input-search-button' type="submit">Search</button>
+        <button className='input-search-button' onClick={handleClick}>Most Recent Articles</button>
       </form>
      
     </div>

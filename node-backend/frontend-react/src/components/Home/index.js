@@ -32,6 +32,14 @@ function Home() {
       console.log(data.payload);
         setSearchResults(data.payload);
     }
+    //most recent articles
+    async function handleClick(e){
+      e.preventDefault();
+      let response = await fetch(`/api/resources?limits=20`);
+        let data = await response.json();
+      console.log(data.payload);
+        setSearchResults(data.payload);
+    }
 
     return (
       <div>
@@ -47,6 +55,7 @@ function Home() {
             className="searchBar"
             handleChange={handleChange}
             text={text}
+            handleClick={handleClick}
           />
           {searchResults && (
             <SearchResult searchResults={searchResults} className="searchResults" />
