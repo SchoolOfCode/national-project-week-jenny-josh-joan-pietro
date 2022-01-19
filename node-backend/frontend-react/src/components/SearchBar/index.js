@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './SearchBar.css'
 
 function SearchBar() {
     return (
-        <div>
-            <input type='text'/> 
-            <input type='button' value='search'/>
+        <div className='search-button'>
+            <input className='input-search' type='text'/> 
+            <br/>
+            <input className='input-search-button' type='button' value='Search'/>
         </div>
     )
 }
