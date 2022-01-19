@@ -1,7 +1,7 @@
 import React, {useState} from "react";
  import Sidebar from "../Sidebar";
  import SearchBar from "../SearchBar";
- //import SearchResult from "../SearchResult";
+ import SearchResult from "../SearchResult";
  import './Home.css'
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
     setText(event);
   }
   //sidebar
-  const [topicSearchResults, setTopicSearchResults] = useState([])
+  // const [topicSearchResults, setTopicSearchResults] = useState([])
 
     async function searchByTopic(e) {
       e.preventDefault();
@@ -28,7 +28,7 @@ function Home() {
       let response = await fetch(`/api/resources?topic=${topic}`);
         let data = await response.json();
       console.log(data.payload);
-        setTopicSearchResults(data.payload);
+        setSearchResults(data.payload);
     }
 
     return (
@@ -39,8 +39,16 @@ function Home() {
         </p>
         <div className="searchSection">
           <Sidebar searchByTopic={searchByTopic} className="sideBar" />
-          <SearchBar searchResults={searchResults} submitSearch={submitSearch} className="searchBar"  handleChange={handleChange} text={text}/>
-          {/* <SearchResult /> */}
+          <SearchBar
+            searchResults={searchResults}
+            submitSearch={submitSearch}
+            className="searchBar"
+            handleChange={handleChange}
+            text={text}
+          />
+          {searchResults && (
+            <SearchResult searchResults={searchResults} className="searchResults" />
+          )}
         </div>
       </div>
     );
