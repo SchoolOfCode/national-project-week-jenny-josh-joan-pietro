@@ -4,7 +4,9 @@ import React, {useState} from "react";
  import SearchResult from "../SearchResult";
  import './Home.css'
 
+
 function Home() {
+
   //searchbar
   const [searchResults, setSearchResults] = useState([])
   const [text, setText] = useState("");
@@ -51,6 +53,7 @@ function Home() {
           )}
         </div>
       </div>
+
     );
   }
 

@@ -11,6 +11,11 @@
     font-size: 50px;
 }
 
+/* .main-section{
+    display: grid;
+    grid-template-columns: 1fr 7fr; */
+
+
 .searchSection {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -30,4 +35,5 @@
 
 .searchResults {
 grid-area: 1 / 2 /span 1 / span 1;
+
 }

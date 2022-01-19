@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import './SearchBar.css'
 
+
 function SearchBar({submitSearch, handleChange, text}) {
   return (
     <div className='search-button'>
@@ -19,5 +20,6 @@ function SearchBar({submitSearch, handleChange, text}) {
      
     </div>
   );
+
 }
 export default SearchBar;

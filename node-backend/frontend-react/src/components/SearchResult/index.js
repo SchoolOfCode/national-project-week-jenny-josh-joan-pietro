@@ -7,11 +7,10 @@ function SearchResult({searchResults}){
         <div>
             {searchResults.map((result) => {
                 return (
-                  <div>
+                  <div className="list">
                     <h3> Topic: {result.topic}</h3>
                     <h4> Keywords: {result.keywords}</h4><p>Description: {result.description}</p>
-                     <p> Submitted by: {result.username}</p>
-                   
+                     <p> Submitted by: {result.username}</p>  
                     <LinkPreview url={result.link} width="300px" height="200px" />
                   </div>
                 );
