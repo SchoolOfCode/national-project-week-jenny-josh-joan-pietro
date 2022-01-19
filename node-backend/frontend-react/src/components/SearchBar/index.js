@@ -1,13 +1,15 @@
+
 // import e from "express";
 // import res from "express/lib/response";
 import React, { useState } from "react";
-
+import './SearchBar.css'
 
 function SearchBar() {
   const [text, setText] = useState("");
 
   const [searchResults, setSearchResults] = useState([])
-
+  
+  
   async function submitSearch(e) {
     e.preventDefault();
     let response = await fetch(`/api/resources?keywords=${text}`);
@@ -21,15 +23,15 @@ function SearchBar() {
     setText(event);
   }
   return (
-    <div>
+    <div className='search-button'>
       <form onSubmit={submitSearch}>
-        <input
+        <input className='input-search'
           type="text"
           value={text}
           onChange={(e) => handleChange(e.target.value)}
           placeholder="Search by keywords"
         />
-        <button type="submit">Search</button>
+        <button className='input-search-button' type="submit">Search</button>
       </form>
      
     </div>

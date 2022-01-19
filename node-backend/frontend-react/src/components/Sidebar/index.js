@@ -4,7 +4,7 @@ import TopicButton from './TopicButton';
 function Sidebar() {
     return (
         <div>
-            <h1>sidebar</h1>
+            <h1>empty sidebar comp</h1>
             <TopicButton />
         </div>
     )

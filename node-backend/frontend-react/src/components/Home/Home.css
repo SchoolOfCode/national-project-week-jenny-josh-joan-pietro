@@ -1,0 +1,12 @@
+.title-page{
+    font-family: fantasy;
+    margin-top: 2%;
+    color: rgb(44, 44, 43);
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.intro-paragraph{
+    text-align: center;
+    font-size: 50px;
+}

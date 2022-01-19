@@ -10,9 +10,15 @@ function Navbar() {
 
 
     return (
-        <div>
+        <div className=' navigation-bar container'>
+            <nav class="navbar navbar-light bg-light border border-primary">
+              <form class="container-fluid justify-content-start">
+                <button class="btn btn-outline-primary me-5" type="button"><Link to="/">Home</Link></button>
+                <button class="btn btn-outline-primary me-5" type="button"><Link to="/create">Create Page</Link></button>
+              </form>
+            </nav>
             
-          <ul>
+          {/* <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -20,8 +26,7 @@ function Navbar() {
               <Link to="/create">Create Page</Link>
             </li>
             
-          </ul>
-        
+          </ul> */}
         </div>
     )
 }
