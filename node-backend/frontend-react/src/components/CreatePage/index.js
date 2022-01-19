@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './CreatePage.css';
  
 
 function CreatePage() {
@@ -26,34 +27,64 @@ function CreatePage() {
       body:JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
     })
-    // .then(res => console.log(res.json()));
     console.log(JSON.stringify(formData))
     return response.json();
 
   }
-
+      let topicList = ['html','css','javascript','react','database','api','node','express','testing','agile']
+    
      return (
         <>
           <h1>Create your first topic</h1>
+          <div className="card container p-5 border border-primary">
+          <div className="container pl-5">
+           <form className="col g-2 needs-validation" novalidate method='POST' action='submit' onSubmit={handleSubmit}>
+             
+                <div class="col-md-1">
+                  <label className="form-label" for="topic">Topic:</label>
+                    <select className='select-button border border-primary' name="topic" id="cars" onChange={handleChange}>
+                      {topicList.map(item=>{
+                        return <option value={item}>{item}</option>
+                      })}
+                    </select>
+                </div>
 
-           <form method='POST' action='submit' onSubmit={handleSubmit}>
-              <label for="topic">Topic:</label>
-              <input onChange={handleChange} type='text' id='topic' name='topic'/>
+                <br/>
+
+                <div class="col-md-8">
+                  <label className="form-label" for="keywords">Keywords:</label>
+                  <input className="form-control border border-primary" onChange={handleChange} type='text' id='keywords' name='keywords'/>
+                </div>
+
               <br></br>
-              <label for="keywords">Keywords:</label>
-              <input onChange={handleChange} type='text' id='keywords' name='keywords'/>
+
+              <div class="col-md-8">
+                <label className="form-label" for="description">Description:</label>
+                <input className="form-control border border-primary" onChange={handleChange} type='text' id='description' name='description'/>
+              </div>
+              
               <br></br>
-              <label for="description">Description:</label>
-              <input onChange={handleChange} type='text' id='description' name='description'/>
+
+              <div class="col-md-8">
+                <label className="form-label" for="link">Link:</label>
+                <input className="form-control border border-primary" onChange={handleChange} type='text' id='link' name='link'/>
+              </div>
+              
               <br></br>
-              <label for="link">Link:</label>
-              <input onChange={handleChange} type='text' id='link' name='link'/>
+
+              <div class="col-md-8">
+                <label className="form-label" for="username">Username:</label>
+                <input className="form-control border border-primary" onChange={handleChange} type='text' id='username' name='username' />
+              </div>
+              
               <br></br>
-              <label for="username">Username:</label>
-              <input onChange={handleChange} type='text' id='username' name='username' />
-              <br></br>
-              <input  type='submit' value='Submit'/>
+              <div className="col-12">
+              <input className="btn btn-primary" type='submit' value='Submit'/>
+              </div>
            </form>
+           </div>
+           </div>
+          
         </>
       );
 }
