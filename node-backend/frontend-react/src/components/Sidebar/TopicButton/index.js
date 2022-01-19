@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react";
 
-function TopicButton({name, searchByTopic}) {
-    return (
-      <div>
-        <button
-                    id={name}
-          onClick={(e) => searchByTopic(e)}
-        >
-          {name}
-        </button>
-      </div>
-    );
+function TopicButton({ name, searchByTopic }) {
+  return (
+    <div>
+      <a id={name} onClick={(e) => searchByTopic(e)}>
+        {name}
+      </a>
+    </div>
+  );
 }
 
-export default TopicButton
+export default TopicButton;
