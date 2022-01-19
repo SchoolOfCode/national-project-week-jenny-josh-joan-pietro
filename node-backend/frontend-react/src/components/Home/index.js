@@ -1,14 +1,12 @@
-import React, {useState} from "react";
- import Sidebar from "../Sidebar";
- import SearchBar from "../SearchBar";
- import SearchResult from "../SearchResult";
- import './Home.css'
-
+import React, { useState } from "react";
+import Sidebar from "../Sidebar";
+import SearchBar from "../SearchBar";
+import SearchResult from "../SearchResult";
+import "./Home.css";
 
 function Home() {
-
   //searchbar
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([]);
   const [text, setText] = useState("");
   async function submitSearch(e) {
     e.preventDefault();
@@ -16,13 +14,14 @@ function Home() {
     let data = await response.json();
     console.log(data.payload);
     setSearchResults(data.payload);
-    setText('')
+    setText("");
   }
   function handleChange(event) {
     setText(event);
   }
   //sidebar
   // const [topicSearchResults, setTopicSearchResults] = useState([])
+
 
     async function searchByTopic(e) {
       e.preventDefault();
@@ -41,29 +40,40 @@ function Home() {
         setSearchResults(data.payload);
     }
 
-    return (
-      <div>
-        <h1 className="title-page">BOOTCAMPER HELPER</h1>
-        <p className="intro-paragraph">
-          Search all info about your favourite topic
-        </p>
-        <div className="searchSection">
-          <Sidebar searchByTopic={searchByTopic} className="sideBar" />
-          <SearchBar
+  return (
+    <div>
+      <h1 className="title-page">BOOTCAMPER HELPER</h1>
+      <p className="intro-paragraph">
+        Search all info about your favourite topic
+      </p>
+      <div className="searchSection">
+        <SearchBar
+          searchResults={searchResults}
+          submitSearch={submitSearch}
+          className="searchBar"
+          handleChange={handleChange}
+          text={text}
+        />
+        {searchResults && (
+          <SearchResult
             searchResults={searchResults}
+
             submitSearch={submitSearch}
-            className="searchBar"
+          
             handleChange={handleChange}
             text={text}
             handleClick={handleClick}
+
+            className="searchResults"
+
           />
-          {searchResults && (
-            <SearchResult searchResults={searchResults} className="searchResults" />
-          )}
-        </div>
+        )}
+        {/* <div className="sidebar-div"> */}
+        <Sidebar searchByTopic={searchByTopic} className="sideBar" />
+        {/* </div> */}
       </div>
+    </div>
+  );
+}
 
-    );
-  }
-
-  export default Home;
+export default Home;

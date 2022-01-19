@@ -1,12 +1,12 @@
-import React from 'react';
-import "./ListItem.css";
+// import React from 'react';
+// import "./ListItem.css";
 
-function ListItem() {
-    return (
-     <>
-        <li className='list border border-primary'>heel</li>
-    </>   
-    )
-}
+// function ListItem() {
+//     return (
+//      <>
+//         <li className='list border border-primary'>heel</li>
+//     </>
+//     )
+// }
 
-export default ListItem
+// export default ListItem

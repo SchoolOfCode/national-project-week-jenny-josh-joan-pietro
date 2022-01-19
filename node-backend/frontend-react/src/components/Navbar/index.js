@@ -1,21 +1,22 @@
-import React from 'react'
-import { Link} from "react-router-dom";
-import './Navbar.css'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
-
-
-    return (
-      <> 
-        <div class="topnav">
+  return (
+    <>
+      <div class="topnav">
         <form class="container-fluid justify-content-start">
-          <a class="active" href="#news"><Link to="/">Home</Link></a>
-          <a class="active" href="#home"><Link to="/create">Create Page</Link></a>
+          <a class="active" href="#news">
+            <Link to="/">Home</Link>
+          </a>
+          <a class="active" href="#home">
+            <Link to="/create">Create Post</Link>
+          </a>
         </form>
-        </div>
-       </>
-    )
+      </div>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;
