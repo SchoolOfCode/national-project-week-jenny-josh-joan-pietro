@@ -32,9 +32,7 @@ useEffect(() => {
         <Route path="create" element={<CreatePage />} />
       </Routes>
         
-        <div>
-
-        </div>
+        
      
     </div>
   );

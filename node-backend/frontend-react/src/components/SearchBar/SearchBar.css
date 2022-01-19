@@ -1,11 +1,15 @@
 .search-button{
-    margin-left: 45%;
+    margin-left: 40%;
 }
 .input-search{
     width: 400px;
     height: 35px;
 }
 .input-search-button{
-    margin-left: 15%;
+    margin-left: 1%;
     margin-top: 1%;
+    font-size: 30px;
+    color: blue;
+    
+    
 }

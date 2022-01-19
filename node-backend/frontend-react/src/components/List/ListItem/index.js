@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
+import "./ListItem.css";
 
 function ListItem() {
     return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-            </ul>
-        </div>
+     <>
+        <li className='list border border-primary'>heel</li>
+    </>   
     )
 }
 
