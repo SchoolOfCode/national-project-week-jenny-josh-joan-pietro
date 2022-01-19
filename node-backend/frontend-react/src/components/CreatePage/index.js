@@ -1,6 +1,18 @@
 import React, {useState} from "react";
 import './CreatePage.css';
  
+export const topicList = [
+  "html",
+  "css",
+  "javascript",
+  "react",
+  "database",
+  "api",
+  "node",
+  "express",
+  "testing",
+  "agile",
+];
 
 function CreatePage() {
   const initialFormData={
@@ -31,7 +43,7 @@ function CreatePage() {
     return response.json();
 
   }
-      let topicList = ['html','css','javascript','react','database','api','node','express','testing','agile']
+     
     
      return (
         <>
