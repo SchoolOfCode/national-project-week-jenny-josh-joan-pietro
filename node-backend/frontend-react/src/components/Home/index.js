@@ -22,14 +22,23 @@ function Home() {
   //sidebar
   // const [topicSearchResults, setTopicSearchResults] = useState([])
 
-  async function searchByTopic(e) {
-    e.preventDefault();
-    let topic = e.target.id;
-    let response = await fetch(`/api/resources?topic=${topic}`);
-    let data = await response.json();
-    console.log(data.payload);
-    setSearchResults(data.payload);
-  }
+
+    async function searchByTopic(e) {
+      e.preventDefault();
+      let topic = e.target.id;
+      let response = await fetch(`/api/resources?topic=${topic}`);
+        let data = await response.json();
+      console.log(data.payload);
+        setSearchResults(data.payload);
+    }
+    //most recent articles
+    async function handleClick(e){
+      e.preventDefault();
+      let response = await fetch(`/api/resources?limits=20`);
+        let data = await response.json();
+      console.log(data.payload);
+        setSearchResults(data.payload);
+    }
 
   return (
     <div>
@@ -48,7 +57,15 @@ function Home() {
         {searchResults && (
           <SearchResult
             searchResults={searchResults}
+
+            submitSearch={submitSearch}
+          
+            handleChange={handleChange}
+            text={text}
+            handleClick={handleClick}
+
             className="searchResults"
+
           />
         )}
         {/* <div className="sidebar-div"> */}
