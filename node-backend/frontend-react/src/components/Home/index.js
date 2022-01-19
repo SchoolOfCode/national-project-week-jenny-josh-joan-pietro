@@ -5,6 +5,7 @@ import React, {useState} from "react";
  import './Home.css'
 
 function Home() {
+  //searchbar
   const [searchResults, setSearchResults] = useState([])
   const [text, setText] = useState("");
   async function submitSearch(e) {
@@ -18,6 +19,18 @@ function Home() {
   function handleChange(event) {
     setText(event);
   }
+  //sidebar
+  const [topicSearchResults, setTopicSearchResults] = useState([])
+
+    async function searchByTopic(e) {
+      e.preventDefault();
+      let topic = e.target.id;
+      let response = await fetch(`/api/resources?topic=${topic}`);
+        let data = await response.json();
+      console.log(data.payload);
+        setTopicSearchResults(data.payload);
+    }
+
     return (
       <div>
         <h1 className="title-page">BOOTCAMPER HELPER</h1>
@@ -25,7 +38,7 @@ function Home() {
           Search all info about your favourite topic
         </p>
         <div className="searchSection">
-          <Sidebar className="sideBar" />
+          <Sidebar searchByTopic={searchByTopic} className="sideBar" />
           <SearchBar searchResults={searchResults} submitSearch={submitSearch} className="searchBar"  handleChange={handleChange} text={text}/>
           {/* <SearchResult /> */}
         </div>

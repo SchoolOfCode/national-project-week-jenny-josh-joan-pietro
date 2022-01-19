@@ -1,11 +1,11 @@
 import React from 'react'
 
-function TopicButton({name, handleClick}) {
+function TopicButton({name, searchByTopic}) {
     return (
       <div>
         <button
                     id={name}
-          onClick={(e) => handleClick(e)}
+          onClick={(e) => searchByTopic(e)}
         >
           {name}
         </button>
