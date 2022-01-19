@@ -1,11 +1,16 @@
 import React from 'react'
 
-function TopicButton() {
+function TopicButton({name, handleClick}) {
     return (
-        <div>
-            <h1>empty topic comp</h1>
-        </div>
-    )
+      <div>
+        <button
+                    id={name}
+          onClick={(e) => handleClick(e)}
+        >
+          {name}
+        </button>
+      </div>
+    );
 }
 
 export default TopicButton
