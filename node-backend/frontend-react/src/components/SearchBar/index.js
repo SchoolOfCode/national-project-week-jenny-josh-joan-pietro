@@ -17,7 +17,7 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
           required
           value={text}
           onChange={(e) => handleChange(e.target.value)}
-          placeholder="Search by keywords"
+          placeholder="Search by keyword"
         />
         <button
           className="input-search-button border border-primary"

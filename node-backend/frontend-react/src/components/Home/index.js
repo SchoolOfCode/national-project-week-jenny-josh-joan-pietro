@@ -90,7 +90,7 @@ function Home() {
                 {searchResults.length === 0 && (
                   <div className="homeContent">
                     <h3>
-                      Welcome to the Bootcamper Helper. Search for articles by topic or keyword.{" "}
+                      Welcome to the Bootcamper Helper. You can search for articles by topic or keyword.
                       <br></br>
                       <br></br>Feel free to upload any links you've found
                       helpful, just click on the "Share your resources" button
