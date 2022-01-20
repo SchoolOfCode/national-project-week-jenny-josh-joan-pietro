@@ -1,17 +1,18 @@
 const createTable = [
   {
-    username: "josh",
-    topic: "html",
-    keywords: "h1",
-    description: "one",
-    link: "www.1",
+    username: "Josh",
+    topic: "css",
+    keywords: "css selectors",
+    description:
+      "CSS Diner - A fun game to help you learn and practice CSS selectors",
+    link: "https://flukeout.github.io/",
   },
   {
-    username: "jenny",
-    topic: "database",
-    keywords: "sql",
-    description: "two",
-    link: "www.2",
+    username: "Jenny",
+    topic: "other",
+    keywords: "flowcharts algorithm",
+    description: "Flowchart Maker & Online Diagram Software",
+    link: "https://app.diagrams.net/",
   },
   {
     username: "bob",

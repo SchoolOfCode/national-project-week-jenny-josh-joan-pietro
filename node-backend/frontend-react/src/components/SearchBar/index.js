@@ -23,30 +23,30 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
           className="input-search-button border border-primary"
           type="submit"
         >
-          Search
+          <i class="fa fa-search"></i>
         </button>
-        <button
+        {/* <button
           className="input-search-button border border-primary"
           onClick={handleClick}
         >
           Most Recent Articles
-        </button>
+        </button> */}
 
-        
-          <label className="text form-label " for="topic">
+        {/* <label className="text form-label " for="topic">
             Sort by:
-          </label>
-          <select
-            className="itemDrop border border-primary"
-            name="sortby"
-            id="sortby"
-            onChange={(e) => handleSortBy(e.target.value)}
-          >
-            <option value="old to new">old to new</option>
-            <option value="new to old">new to old</option>
-          </select>
-        
-
+          </label> */}
+        <select
+          className="itemDrop border border-primary"
+          name="sortby"
+          id="sortby"
+          onChange={(e) => handleSortBy(e.target.value)}
+        >
+          <option value="" disabled selected hidden>
+            sort by
+          </option>
+          <option value="old to new">old to new</option>
+          <option value="new to old">new to old</option>
+        </select>
       </form>
     </div>
   );
