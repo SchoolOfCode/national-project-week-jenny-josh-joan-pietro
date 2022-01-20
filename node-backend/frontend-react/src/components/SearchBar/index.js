@@ -28,12 +28,12 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
         >
           Most Recent Articles
         </button>
-        <div className="border border-primary">
-          <label className="form-label " for="topic">
+        
+          <label className="text form-label " for="topic">
             Sort by:
           </label>
           <select
-            className="select-button border border-primary"
+            className="itemDrop border border-primary"
             name="sortby"
             id="sortby"
             onChange={(e) => handleSortBy(e.target.value)}
@@ -41,7 +41,7 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
             <option value="old to new">old to new</option>
             <option value="new to old">new to old</option>
           </select>
-        </div>
+        
       </form>
     </div>
   );
