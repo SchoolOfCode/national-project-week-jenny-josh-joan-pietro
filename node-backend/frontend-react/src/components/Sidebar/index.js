@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TopicButton from "./TopicButton";
 import { topicList } from "../CreatePage";
-import "./Sidebar.css";
+import "./sideBar.css";
 
 function Sidebar({ searchByTopic }) {
   return (

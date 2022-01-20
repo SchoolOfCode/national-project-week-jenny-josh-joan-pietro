@@ -28,3 +28,16 @@ body {
   background-color: rgb(44, 75, 252);
   color: white;
 }
+
+.navLogo {
+  float: right;
+  /* margin: 18px; */
+  width: 80px;
+  background-color: rgb(44, 75, 252);
+  
+}
+
+.navLogoImg {
+border-radius: 50%;
+background-color: rgb(44, 75, 252);
+}

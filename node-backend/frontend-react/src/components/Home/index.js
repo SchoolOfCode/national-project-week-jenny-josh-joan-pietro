@@ -86,6 +86,23 @@ function Home() {
                     className="searchResults"
                   />
                 )}
+
+                {searchResults.length === 0 && (
+                  <div className="homeContent">
+                    <h3>
+                      Welcome to the Bootcamper Helper. Search for articles by topic or keyword.{" "}
+                      <br></br>
+                      <br></br>Feel free to upload any links you've found
+                      helpful, just click on the "Share your resources" button
+                      above.<br></br>
+                      <br></br>
+                    </h3>
+                    <img
+                      src="https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png"
+                      alt="School of Code logo"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

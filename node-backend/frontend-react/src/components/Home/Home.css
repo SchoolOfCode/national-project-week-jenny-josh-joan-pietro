@@ -7,3 +7,12 @@
   grid-template-rows: 1fr 1fr 1fr;
   
 }
+
+.homeContent {
+    text-align: center;
+    margin: 20px;
+}
+
+.homeContent h3 {
+    margin: 20px;
+}
