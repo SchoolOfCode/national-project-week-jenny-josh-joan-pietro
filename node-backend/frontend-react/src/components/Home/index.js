@@ -28,9 +28,9 @@ function Home() {
   
   function handleSortBy(sortOrder) {
     if (sortOrder === "new to old") {
-      setSearchResults([...searchResults].sort((a, b) => a.id - b.id));
-    } else {
       setSearchResults([...searchResults].sort((a, b) => b.id - a.id));
+    } else {
+      setSearchResults([...searchResults].sort((a, b) => a.id - b.id));
     }
   }
 
