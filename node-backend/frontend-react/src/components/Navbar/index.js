@@ -11,7 +11,7 @@ function Navbar() {
             <Link to="/">Home</Link>
           </a>
           <a class="active" href="#home">
-            <Link to="/create">Create Post</Link>
+            <Link to="/create">Share your resources</Link>
           </a>
         </form>
       </div>

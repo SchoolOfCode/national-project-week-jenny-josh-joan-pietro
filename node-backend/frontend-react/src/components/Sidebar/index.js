@@ -6,8 +6,8 @@ import "./Sidebar.css";
 function Sidebar({ searchByTopic }) {
   return (
     <div className="sideBar">
-      <div class="sidebar">
-        <p>Click on topic below to browse all articles</p>
+      <div className="sidebar">
+        <p className="title-sidebar">TOPIC</p>
         {topicList.map((topic, index) => {
           return (
             <TopicButton

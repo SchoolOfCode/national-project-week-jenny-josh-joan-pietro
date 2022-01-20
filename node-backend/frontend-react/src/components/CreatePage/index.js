@@ -42,7 +42,7 @@ function CreatePage() {
 
   return (
     <>
-      <h1>Create your first topic</h1>
+      <h1>Share your resources</h1>
       <div className="card container p-5 border border-primary">
         <div className="container pl-5">
           <form
@@ -52,7 +52,7 @@ function CreatePage() {
             action="submit"
             onSubmit={handleSubmit}
           >
-            <div class="col-md-1">
+            <div className="col-md-1">
               <label className="form-label" for="topic">
                 Topic:
               </label>
@@ -62,15 +62,15 @@ function CreatePage() {
                 id="cars"
                 onChange={handleChange}
               >
-                {topicList.map((item) => {
-                  return <option value={item}>{item}</option>;
+                {topicList.map((item,index) => {
+                  return <option key={index} value={item}>{item}</option>;
                 })}
               </select>
             </div>
 
             <br />
 
-            <div class="col-md-8">
+            <div className="col-md-8">
               <label className="form-label" for="keywords">
                 Keywords:
               </label>
@@ -85,7 +85,7 @@ function CreatePage() {
 
             <br></br>
 
-            <div class="col-md-8">
+            <div className="col-md-8">
               <label className="form-label" for="description">
                 Description:
               </label>
@@ -115,7 +115,7 @@ function CreatePage() {
 
             <br></br>
 
-            <div class="col-md-8">
+            <div className="col-md-8">
               <label className="form-label" for="username">
                 Username:
               </label>
@@ -129,8 +129,9 @@ function CreatePage() {
             </div>
 
             <br></br>
-            <div className="col-12">
+            <div className="button-line col-12">
               <input className="btn btn-primary" type="submit" value="Submit" />
+                
             </div>
           </form>
         </div>

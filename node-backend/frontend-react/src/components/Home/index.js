@@ -41,39 +41,39 @@ function Home() {
     }
 
   return (
+    <>
     <div>
-      <h1 className="title-page">BOOTCAMPER HELPER</h1>
-      <p className="intro-paragraph">
-        Search all info about your favourite topic
-      </p>
-      <div className="searchSection">
-        <SearchBar
+      <div className="sideBar-mainContent">
+        <Sidebar searchByTopic={searchByTopic} className="sideBar" />
+        
+        <div className="maincontent">
+          <h1 className="title-page">BOOTCAMPER HELPER</h1>
+          <SearchBar
           searchResults={searchResults}
           submitSearch={submitSearch}
           className="searchBar"
           handleChange={handleChange}
           text={text}
         />
+        
+
         {searchResults && (
           <SearchResult
             searchResults={searchResults}
-
             submitSearch={submitSearch}
-          
             handleChange={handleChange}
             text={text}
             handleClick={handleClick}
-
             className="searchResults"
-
           />
         )}
-        {/* <div className="sidebar-div"> */}
-        <Sidebar searchByTopic={searchByTopic} className="sideBar" />
-        {/* </div> */}
+       </div>
+       
       </div>
     </div>
-  );
+    </>
+    );
+  
 }
 
 export default Home;

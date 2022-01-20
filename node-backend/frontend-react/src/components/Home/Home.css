@@ -1,39 +1,9 @@
-.title-page {
-  font-family: fantasy;
-  margin-top: 2%;
-  color: rgb(44, 44, 43);
-  font-weight: bold;
-  font-size: 90px;
-}
-/* .sidebar-div {
-  margin-top: -180px;
-  margin-left: 50px;
-} */
-
-.intro-paragraph {
-  text-align: center;
-  font-size: 50px;
-}
-
-/* .main-section{
-    display: grid;
-    grid-template-columns: 1fr 7fr; */
-
-.searchSection {
+.sideBar-mainContent{
   display: grid;
-  grid-template-columns: 2fr 4fr;
+  grid-template-columns: 1fr 10fr ;
 }
-
-.sideBar {
-  grid-area: 1 / 1 / span 1 / span 1;
-  border-right: 2px solid black;
-  margin: 0 auto;
-}
-
-.searchBar {
-  grid-area: 1 / 2 / span 1 / span 1;
-}
-
-.searchResults {
-  grid-area: 1 / 2 / span 1 / span 1;
+.maincontent{
+  display: gird;
+  grid-template-rows: 1fr 1fr 1fr;
+  
 }
