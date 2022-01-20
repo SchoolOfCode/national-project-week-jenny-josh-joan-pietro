@@ -14,7 +14,7 @@ function SearchResult({ searchResults }) {
             <h4> Keywords: {result.keywords}</h4>
             <p>Description: {result.description}</p>
             <p> Submitted by: {result.username}</p>
-            <LinkPreview url={result.link} width="300px" height="200px" />  
+            <LinkPreview url={result.link} />  
           </div>
           </>
         );
