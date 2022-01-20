@@ -9,13 +9,15 @@ function Sidebar({ searchByTopic }) {
       <div className="sidebar">
         <p className="title-sidebar">TOPIC</p>
         {topicList.map((topic, index) => {
-          return (
-            <TopicButton
-              key={index}
-              name={topic}
-              searchByTopic={searchByTopic}
-            />
-          );
+            if (topic !== '') {
+                return (
+                    <TopicButton
+                        key={index}
+                        name={topic}
+                        searchByTopic={searchByTopic}
+                    />
+                );
+            }
         })}
       </div>
     </div>
