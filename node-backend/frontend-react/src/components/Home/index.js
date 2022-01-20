@@ -39,7 +39,15 @@ function Home() {
       console.log("i'm making a recent articles search")
       console.log(data.payload);
         setSearchResults(data.payload);
+  }
+  
+  function handleSortBy(sortOrder) {
+    if (sortOrder === "new to old") {
+      setSearchResults([...searchResults].sort((a, b) => a.id - b.id));
+    } else {
+setSearchResults([...searchResults].sort((a, b) => b.id - a.id));
     }
+  }
 
   return (
     <>
@@ -56,6 +64,7 @@ function Home() {
           handleChange={handleChange}
               text={text}
               handleClick={handleClick}
+              handleSortBy={handleSortBy}
         />
         
 
