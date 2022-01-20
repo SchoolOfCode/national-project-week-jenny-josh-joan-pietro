@@ -3,6 +3,7 @@ import "./CreatePage.css";
 
 export const topicList = [
   "See all resources",
+  "",
   "html",
   "css",
   "javascript",
@@ -34,6 +35,7 @@ function CreatePage() {
   }
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(formData);
     let response = await fetch("/api/resources", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -41,7 +43,7 @@ function CreatePage() {
     });
     formRef.current.reset();
     console.log(JSON.stringify(formData));
-    response.status === 200 ? alert("item submitted") : alert("error");
+    response.status === 200 ? alert("Thank you for submitting an article to the Bootcamper Helper!") : alert("There has been an error. Please try again later.");
     return response.json();
   }
 
@@ -62,21 +64,25 @@ function CreatePage() {
               <label className="form-label" for="topic">
                 Topic:
               </label>
-              <select
-                className="select-button border border-primary"
+              <select required
+                className="dropList select-button border border-primary"
                 name="topic"
                 id="cars"
                 onChange={handleChange}
               >
                 {topicList.map((item, index) => {
-                  
-                  if (item !== "See all resources") {
+                  if(item === ""){return (
+                    <option value="" disabled selected hidden>
+                      select
+                    </option>
+                  );}
+                  else if (item !== "See all resources") {
                     return (
                       <option key={index} value={item}>
                         {item}
                       </option>
                     );
-                  } 
+                  }
                 })}
               </select>
             </div>

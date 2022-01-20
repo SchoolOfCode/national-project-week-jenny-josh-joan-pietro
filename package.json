@@ -8,6 +8,7 @@
     "build": "cd node-backend/frontend-react && npm install && npm run build",
     "db:createusers": "node -r dotenv/config ./db/scripts/users/createTable.js",
     "db:populatetable": "node -r dotenv/config ./db/scripts/users/populateTable.js",
+    "db:deletetablecontents": "node -r dotenv/config ./db/scripts/users/deleteTable.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js"
   },
   "dependencies": {

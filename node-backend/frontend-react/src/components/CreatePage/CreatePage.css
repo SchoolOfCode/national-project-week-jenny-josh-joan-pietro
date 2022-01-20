@@ -15,3 +15,11 @@ label{
 .button-line{
     display: flex;
 }
+
+.card {
+    position: static;
+}
+
+.dropList {
+width: 150px;
+}
