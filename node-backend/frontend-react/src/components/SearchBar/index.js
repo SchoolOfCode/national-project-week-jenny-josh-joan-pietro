@@ -1,17 +1,20 @@
-
 // import e from "express";
 // import res from "express/lib/response";
 import React, { useState } from "react";
-import './SearchBar.css'
+import "./SearchBar.css";
 
 
 function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}) {
+
+
+
   return (
     <div className="search-button border border-primary">
       <form onSubmit={submitSearch}>
         <input
           className="input-search"
           type="text"
+          required
           value={text}
           onChange={(e) => handleChange(e.target.value)}
           placeholder="Search by keywords"
@@ -28,6 +31,7 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
         >
           Most Recent Articles
         </button>
+
         
           <label className="text form-label " for="topic">
             Sort by:
@@ -42,9 +46,9 @@ function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}
             <option value="new to old">new to old</option>
           </select>
         
+
       </form>
     </div>
   );
-
 }
 export default SearchBar;

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./CreatePage.css";
 
 export const topicList = [
+  "See all resources",
   "html",
   "css",
   "javascript",
@@ -18,6 +19,8 @@ export const topicList = [
 function CreatePage() {
   const initialFormData = {};
   const [formData, setFormData] = useState(initialFormData);
+
+  const formRef = useRef();
   //to catch the value in the input field - e.target.value
   //add this input value into the state -  key(name atribute of the input)/value(user) pair
   //[e.target.name]: e.target.value
@@ -36,7 +39,9 @@ function CreatePage() {
       body: JSON.stringify(formData),
       headers: { "Content-Type": "application/json" },
     });
+    formRef.current.reset();
     console.log(JSON.stringify(formData));
+    response.status === 200 ? alert("item submitted") : alert("error");
     return response.json();
   }
 
@@ -46,6 +51,7 @@ function CreatePage() {
       <div className="card container p-5 border border-primary">
         <div className="container pl-5">
           <form
+            ref={formRef}
             className="col g-2 needs-validation"
             novalidate
             method="POST"
@@ -62,8 +68,12 @@ function CreatePage() {
                 id="cars"
                 onChange={handleChange}
               >
-                {topicList.map((item,index) => {
-                  return <option key={index} value={item}>{item}</option>;
+                {topicList.map((item, index) => {
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -80,6 +90,7 @@ function CreatePage() {
                 type="text"
                 id="keywords"
                 name="keywords"
+                required
               />
             </div>
 
@@ -95,6 +106,7 @@ function CreatePage() {
                 type="text"
                 id="description"
                 name="description"
+                required
               />
             </div>
 
@@ -110,6 +122,8 @@ function CreatePage() {
                 type="text"
                 id="link"
                 name="link"
+                pattern="[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)"
+                required
               />
             </div>
 
@@ -124,14 +138,14 @@ function CreatePage() {
                 onChange={handleChange}
                 type="text"
                 id="username"
-                name="username"
+                name="username" 
+                required
               />
             </div>
 
             <br></br>
             <div className="button-line col-12">
               <input className="btn btn-primary" type="submit" value="Submit" />
-                
             </div>
           </form>
         </div>

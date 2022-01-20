@@ -15,7 +15,7 @@ router.get("/resources", async function (req, res) {
   console.log(req.query); // returns object with key value pairs
   if (req.query.limits !== undefined) {
     result = await getResourcesbyLimits(req.query.limits);
-    console.log("this is receiving a recent articles search")
+    console.log("this is receiving a recent articles search");
   } else if (req.query.keywords !== undefined) {
     result = await searchResourcesByKeyword(req.query.keywords);
     console.log("this is receiving a search for keywords");
