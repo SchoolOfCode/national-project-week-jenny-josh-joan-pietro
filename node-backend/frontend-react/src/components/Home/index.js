@@ -34,8 +34,9 @@ function Home() {
     //most recent articles
     async function handleClick(e){
       e.preventDefault();
-      let response = await fetch(`/api/resources?limits=20`);
-        let data = await response.json();
+      let response = await fetch(`/api/resources?limits=9`);
+      let data = await response.json();
+      console.log("i'm making a recent articles search")
       console.log(data.payload);
         setSearchResults(data.payload);
     }
@@ -53,7 +54,8 @@ function Home() {
           submitSearch={submitSearch}
           className="searchBar"
           handleChange={handleChange}
-          text={text}
+              text={text}
+              handleClick={handleClick}
         />
         
 

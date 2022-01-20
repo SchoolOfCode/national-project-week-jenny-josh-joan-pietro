@@ -29,6 +29,13 @@ export async function searchResourcesByUsername(username) {
   return result.rows;
 }
 
+export async function getResourcesbyLimits(limit) {
+  const result = await query(
+    `SELECT * FROM resources ORDER BY id DESC LIMIT $1;`, [limit]
+  )
+  return result.rows;
+}
+
 export async function deleteResourceById(id) {
   const result = await query(
     `DELETE FROM resources WHERE id=$1;`,
