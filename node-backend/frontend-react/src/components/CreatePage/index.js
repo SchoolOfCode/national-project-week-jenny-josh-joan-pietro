@@ -69,11 +69,14 @@ function CreatePage() {
                 onChange={handleChange}
               >
                 {topicList.map((item, index) => {
-                  return (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  );
+                  
+                  if (item !== "See all resources") {
+                    return (
+                      <option key={index} value={item}>
+                        {item}
+                      </option>
+                    );
+                  } 
                 })}
               </select>
             </div>
