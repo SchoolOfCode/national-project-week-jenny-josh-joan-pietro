@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CreatePage.css";
 
 export const topicList = [
+  "See all resources",
   "html",
   "css",
   "javascript",
@@ -62,8 +63,12 @@ function CreatePage() {
                 id="cars"
                 onChange={handleChange}
               >
-                {topicList.map((item,index) => {
-                  return <option key={index} value={item}>{item}</option>;
+                {topicList.map((item, index) => {
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -131,7 +136,6 @@ function CreatePage() {
             <br></br>
             <div className="button-line col-12">
               <input className="btn btn-primary" type="submit" value="Submit" />
-                
             </div>
           </form>
         </div>

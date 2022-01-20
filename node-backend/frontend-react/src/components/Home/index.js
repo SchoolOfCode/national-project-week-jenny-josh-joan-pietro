@@ -29,7 +29,13 @@ function Home() {
   async function searchByTopic(e) {
     e.preventDefault();
     let topic = e.target.id;
-    let response = await fetch(`/api/resources?topic=${topic}`);
+    let response;
+    if (topic === "See all resources") {
+      response = await fetch(`/api/resources`);
+    } else {
+      response = await fetch(`/api/resources?topic=${topic}`);
+    }
+
     let data = await response.json();
     console.log(data.payload);
     setSearchResults(data.payload);
