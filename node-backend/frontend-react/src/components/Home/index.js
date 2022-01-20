@@ -26,6 +26,17 @@ function Home() {
   //sidebar
   // const [topicSearchResults, setTopicSearchResults] = useState([])
 
+
+
+  
+ 
+  
+  function handleSortBy(sortOrder) {
+    if (sortOrder === "new to old") {
+      setSearchResults([...searchResults].sort((a, b) => a.id - b.id));
+    } else {
+setSearchResults([...searchResults].sort((a, b) => b.id - a.id));
+
   async function searchByTopic(e) {
     e.preventDefault();
     let topic = e.target.id;
@@ -34,7 +45,9 @@ function Home() {
       response = await fetch(`/api/resources`);
     } else {
       response = await fetch(`/api/resources?topic=${topic}`);
+
     }
+  }
 
     let data = await response.json();
     console.log(data.payload);
@@ -65,6 +78,11 @@ function Home() {
               handleChange={handleChange}
               text={text}
               handleClick={handleClick}
+
+              handleSortBy={handleSortBy}
+      
+        
+
             />
 
             {searchResults && (

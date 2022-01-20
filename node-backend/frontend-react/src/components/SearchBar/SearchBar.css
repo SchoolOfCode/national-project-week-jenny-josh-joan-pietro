@@ -13,3 +13,16 @@
     font-size: 30px;
     color: blue;
 }
+.text{
+    font-size: 30px;
+    color: blue;
+    margin-left: 1%;
+}
+.itemDrop{
+    width: 10%;
+    height: 50px;
+}
+select {
+    font-size: 20px;
+    
+}

@@ -3,7 +3,11 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ submitSearch, handleChange, handleClick, text }) {
+
+function SearchBar({submitSearch, handleChange, handleClick, text, handleSortBy}) {
+
+
+
   return (
     <div className="search-button border border-primary">
       <form onSubmit={submitSearch}>
@@ -27,6 +31,22 @@ function SearchBar({ submitSearch, handleChange, handleClick, text }) {
         >
           Most Recent Articles
         </button>
+
+        
+          <label className="text form-label " for="topic">
+            Sort by:
+          </label>
+          <select
+            className="itemDrop border border-primary"
+            name="sortby"
+            id="sortby"
+            onChange={(e) => handleSortBy(e.target.value)}
+          >
+            <option value="old to new">old to new</option>
+            <option value="new to old">new to old</option>
+          </select>
+        
+
       </form>
     </div>
   );
